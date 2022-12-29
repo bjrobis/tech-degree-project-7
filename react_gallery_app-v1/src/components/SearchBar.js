@@ -1,12 +1,17 @@
-import React, {useRef} from 'react';
-//import { Route } from 'react-router-dom';
+import React, {useRef, useEffect} from 'react';
+import {useLocation, Navigate, useNavigate} from 'react-router-dom';
 
 const SearchBar = props => {
     const searchText = useRef(null);
+    const location = useLocation().pathname;
+    let navigate = useNavigate();
 
    //handler for the submit button
     const handleSubmit = e => {
         e.preventDefault();
+        if (location !== '/') {
+            navigate("/");
+        }
         props.changeQuery(searchText.current.value);
         e.currentTarget.reset();
       }
