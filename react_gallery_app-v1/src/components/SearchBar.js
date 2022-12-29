@@ -1,8 +1,10 @@
 import React, {useRef} from 'react';
+//import { Route } from 'react-router-dom';
 
 const SearchBar = props => {
     const searchText = useRef(null);
 
+   //handler for the submit button
     const handleSubmit = e => {
         e.preventDefault();
         props.changeQuery(searchText.current.value);
