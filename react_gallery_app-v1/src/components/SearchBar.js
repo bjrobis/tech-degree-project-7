@@ -1,5 +1,5 @@
-import React, {useRef, useEffect} from 'react';
-import {useLocation, Navigate, useNavigate} from 'react-router-dom';
+import React, {useRef} from 'react';
+import {useLocation, useNavigate} from 'react-router-dom';
 
 const SearchBar = props => {
     const searchText = useRef(null);
